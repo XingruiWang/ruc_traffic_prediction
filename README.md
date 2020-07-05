@@ -2,7 +2,7 @@
 
 ### Dataset
 
-**Q-Traffic Dataset** A large scale traffic dataset collected by Baidu Brain in Beijing China between April 1, 2017 and May 31, 2017. It contains three sub-datasets 
+[**Q-Traffic Dataset**](https://ai.baidu.com/broad/introduction?dataset=traffic) A large scale traffic dataset collected by Baidu Brain in Beijing China between April 1, 2017 and May 31, 2017. It contains three sub-datasets 
 
 - Query datasets. Map query collected from Baidu Map. It contains about 114 million user queries, each if them records the coordinates of start point, coordinates of destination,  start time and estimated travel time. As is described in the origin paper, the query data have strong potential connection with traffic condition, which is used as auxiliary information in traffic prediction.
 
