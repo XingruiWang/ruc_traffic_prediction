@@ -18,7 +18,7 @@
     <img src="Latex/image/predict_ds.png" width="300"/><img src="Latex/image/predict2.png" width="300"/>
 </center>
 
-<center class="half">
+<center>
     <img src="Latex/image/predict.png" width="600"/>
 </center>
 
