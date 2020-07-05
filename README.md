@@ -14,13 +14,9 @@
 
 ### Model Result
 
-<center class="half">
-    <img src="Latex/image/predict_ds.png" width="400"/><img src="Latex/image/predict2.png" width="400"/>
-</center>
+![DSHW](Latex/image/predict_ds.png)![MSARIMA](Latex/image/predict2.png)
 
-<center>
-    <img src="Latex/image/predict.png" width="700"/>
-</center>
+![MSARIMA](Latex/image/predict.png)
 
 The RMSE、EC and MAP of MSARIMA and DSHW by is as following table. 
 
