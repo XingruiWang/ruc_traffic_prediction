@@ -14,4 +14,15 @@
 
 ### Model Result
 
+![](Latex/image/predict2.png)![](Latex/image/predict_ds.png)
+
+![](Latex/image/predict.png)
+
+The RMSE、EC and MAP of MSARIMA and DSHW by is as following table. 
+
+|         | RMSE                  | MAPE                  | EI                    |
+|---------|-----------------------|-----------------------|-----------------------|
+| MSARIMA | 3\.511727             | 6\.156587             | 0\.958342             |
+| DSHW    | \\textbf\{2\.507141\} | \\textbf\{3\.862283\} | \\textbf\{0\.974319\} |
+
 ### Experiment Detail
