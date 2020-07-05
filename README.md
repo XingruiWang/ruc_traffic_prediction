@@ -1,4 +1,4 @@
-# Ruc traffic prediction
+# Ruc traffic prediction ([paper](paper.pdf))
 
 ### Dataset
 
