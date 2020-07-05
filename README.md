@@ -14,9 +14,7 @@
 
 ### Model Result
 
-![](Latex/image/predict2.png)
-
-![](Latex/image/predict_ds.png)
+![](Latex/image/predict_ds.png)![](Latex/image/predict2.png)
 
 ![](Latex/image/predict.png)
 
