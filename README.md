@@ -14,8 +14,8 @@
 
 ### Model Result
 
-![](Latex/image/predict2.png)![](Latex/image/predict_ds.png)
-
+![](Latex/image/predict2.png)
+![](Latex/image/predict_ds.png)
 ![](Latex/image/predict.png)
 
 The RMSE、EC and MAP of MSARIMA and DSHW by is as following table. 
