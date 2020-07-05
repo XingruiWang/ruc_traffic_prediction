@@ -10,13 +10,17 @@
 
 - Road Network datasets. It records the detail information of road network of Traffic Speed dataset, such as road id, start point coordinates, end point coordinate, width, length, speed limit level etc.
 
-<img src="Latex/image/road_map.png" alt="img" style="zoom:50%;" />
+<img src="Latex/image/road_map.png" alt="img" width="600" />
 
 ### Model Result
 
-![](Latex/image/predict_ds.png)![](Latex/image/predict2.png)
+<center class="half">
+    <img src="Latex/image/predict_ds.png" width="300"/><img src="Latex/image/predict2.png" width="300"/>
+</center>
 
-![](Latex/image/predict.png)
+<center class="half">
+    <img src="Latex/image/predict.png" width="600"/>
+</center>
 
 The RMSE、EC and MAP of MSARIMA and DSHW by is as following table. 
 
