@@ -106,7 +106,7 @@ msarima(x.hour, orders=list(ar=c(1,0,3),i=c(0,0,0),ma=c(1,1,0)),lags=c(1,24,168)
 
 ### DSHW 双季节Holt-Winters指数平滑
 
-https://latex.codecogs.com/svg.latex?\begin{aligned}a_t&=\alpha(x_t/s_tr_t)+(1-\alpha)(a_{t-1}+b_{t-1})\\b_t&=\beta(a_t-a_{t-\Pi_1})+(1-\beta)b_{t-1}\\s_t&=\gamma(x_t/a_tr_t)+(1-\gamma)s_{t-\pi_1}\\r_t&=\delta(x_t/a_ts_t)+(1-\delta)r_{t-\pi_1}\\\end{aligned}
+![](https://latex.codecogs.com/svg.latex?\begin{aligned}a_t&=\alpha(x_t/s_tr_t)+(1-\alpha)(a_{t-1}+b_{t-1})\\b_t&=\beta(a_t-a_{t-\Pi_1})+(1-\beta)b_{t-1}\\s_t&=\gamma(x_t/a_tr_t)+(1-\gamma)s_{t-\pi_1}\\r_t&=\delta(x_t/a_ts_t)+(1-\delta)r_{t-\pi_1}\\\end{aligned})
 
 对于人民大学东门外主干道车流的每小时平均速度数据来说，设置日周期长度𝜋1=24，周周期长度𝜋2=24*7=168。可以设计算法，通过最小化预测均方误差，找到系数𝛼, 𝛽, 𝛾, 𝛿的估计值，拟合车流速度数据。在R软件中`forecast`包提供了`dshw()`函数，可以按照这样的思路拟合模型。得到的拟合结果如下表。
 
