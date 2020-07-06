@@ -1,3 +1,5 @@
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
 # Ruc traffic prediction ([paper](paper.pdf))
 
 ### 数据集 ([link](https://ai.baidu.com/broad/introduction?dataset=traffic))
