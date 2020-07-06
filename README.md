@@ -32,14 +32,13 @@ MSARIMA和DSHW的RMSE，EC和MAP如下表所示。
 **MSARIMA**
 
 对于双周期时间序列可以建立模型$\mathrm{ARIMA}(p,d,q)\times(P_1,D_1,Q_1)_{S_1}\times(P_2,D_2,Q_2)_{S_2}$。进一步还需要对模型定阶，
+![](Latex/image/first_month.png)
 
 整体上看，路况数据没有递增或递减的时间趋势。到那时由于时间节点较长，数据较为复杂，直接通过时序图并不能直观的看出路况数据的周期性，所以使用自相关系数图来判断。
 
-![image-20200701224204914](C:\Users\WXR\AppData\Roaming\Typora\typora-user-images\image-20200701224204914.png)
+![](Latex/image/acf_1.png)
 
-![image-20200701224240884](C:\Users\WXR\AppData\Roaming\Typora\typora-user-images\image-20200701224240884.png)
-
-为了方便判断周期，自相关图的横坐标以一天为一个单位和一周为一个单位。通过自相关图 我们可以发现数据具有较为复杂的周期性。
+通过自相关图 我们可以发现数据具有较为复杂的周期性。
 
 （1）日周期。图一中，在每一个横坐标为整数（1，2，3，4）的位置，acf的值都达到波峰，说明路况数据存在很强的日周期性。
 
@@ -63,12 +62,9 @@ x.diff.week <- diff(x, 672, 1)
 plot(x.diff.week)
 acf(x.diff.day,lag.max = 672*5) #5周的
 ```
-
-![image-20200701234030500](C:\Users\WXR\AppData\Roaming\Typora\typora-user-images\image-20200701234030500.png)
+![](Latex/image/x_week_acf.png)![](Latex/image/x_week_pacf.png)
 
 从acf图来看消除周周期影响的序列周期性已经被消除了很多，这是因为消除周周期性的同时也会消除一定的日周期性。在横坐标等于7，14，21的地方acf图已经看不出来明显的突变，说明周周期性已经被基本消除了
-
-![image-20200701234251544](C:\Users\WXR\AppData\Roaming\Typora\typora-user-images\image-20200701234251544.png)
 
 但是从五天内的acf图来看，在短期的几天（第一天、第二天、第三天）仍然有较为明显的相关性，这说明日周期性仍然有很大一部分残留。同时，随着天数的增加，相关系数逐渐变小，这也说明了长时间的周期性（周周期性）已经被消除。
 
@@ -76,7 +72,7 @@ acf(x.diff.day,lag.max = 672*5) #5周的
 
 在已经消除周周期性的数据的基础上，再做96步差分，消除日周期性
 
-![image-20200701234714908](C:\Users\WXR\AppData\Roaming\Typora\typora-user-images\image-20200701234714908.png)
+![](Latex/image/x_day_acf.png)![](Latex/image/x_day_pacf.png)
 
 通过差分后的acf图可以看出，除了第一天acf骤降之外，其余部分没有明显的骤增或骤降，说明短期的日周期性也基本消除掉了。
 
@@ -100,7 +96,24 @@ acf(x.diff.day,lag.max = 96*5)
 
 最终确定，我们要拟合的模型是![](http://latex.codecogs.com/gif.latex?ARIMA(1,0,1)\\times(0,0,1)_{24}\\times(3,0,0)_{168})
 
+```R
+msarima(x.hour, orders=list(ar=c(1,0,3),i=c(0,0,0),ma=c(1,1,0)),lags=c(1,24,168),h=24*7*2,holdout=TRUE,FI=F)
+```
 通过R的系数估计，模型为
 
 ![](http://latex.codecogs.com/gif.latex?\\nabla_{24}\\nabla_{168}x_t=\\frac{(1-0.1794B)(1+0.3304B^{24})}{(1+0.6945B)(1+0.2026B^{168}+0.0214B^{336}+0.7688B^{504})}\\varepsilon_t)
+
+
+### DSHW 双季节Holt-Winters指数平滑
+
+𝑎𝑡 = 𝛼(𝑥𝑡/𝑠𝑡 𝑟𝑡 ) + (1 − 𝛼) (𝑎𝑡−1 + 𝑏𝑡−1) 
+𝑏𝑡 = 𝛽(𝑎𝑡 − 𝑎𝑡 − 1) + (1 − 𝛽)𝑏𝑡−1
+𝑠𝑡 = 𝛾(𝑥𝑡/𝑎𝑡 𝑟𝑡 ) + (1 − 𝛾)𝑠𝑡−𝜋1 𝑟𝑡 = 𝛿(𝑥𝑡/𝑎𝑡 𝑠𝑡 ) + (1 − 𝛿)𝑟𝑡−𝜋1
+
+对于人民大学东门外主干道车流的每小时平均速度数据来说，设置日周期长度𝜋1=24，周周期长度𝜋2=24*7=168。可以设计算法，通过最小化预测均方误差，找到系数𝛼, 𝛽, 𝛾, 𝛿的估计值，拟合车流速度数据。在R软件中`forecast`包提供了`dshw()`函数，可以按照这样的思路拟合模型。得到的拟合结果如下表。
+
+| **参数**  | 𝛼 | 𝛽 | 𝛾 | 𝛾 |
+|-----------------|-----------|----------|-----------|-----------|
+| **估计值** | 0.0133   | 0.0020  | 0.0230   | 0.2652   |
+
 
