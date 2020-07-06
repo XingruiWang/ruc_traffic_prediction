@@ -4,7 +4,7 @@
 
 ### 数据集 ([link](https://ai.baidu.com/broad/introduction?dataset=traffic))
 
-**Q-Traffic Dataset** 是由百度大脑收集的大规模的交通预测数据集~\cite{bbliaojqZhangKDD18deep}。数据集包括Traffic Speed数据集、Road Network数据集、Query数据集三个部分。
+**Q-Traffic Dataset** 是由百度大脑收集的大规模的交通预测数据集。数据集包括Traffic Speed数据集、Road Network数据集、Query数据集三个部分。
 
 - Query datasets.从百度地图收集的地图查询记录。它包含大约1.14亿个用户查询，每个用户查询是否记录起点坐标，目的地坐标，起点时间和估计的旅行时间。如原文中所述，查询数据与交通状况具有很强的潜在联系，在交通预测中用作辅助信息.
 
