@@ -31,7 +31,7 @@ MSARIMA和DSHW的RMSE，EC和MAP如下表所示。
 
 **MSARIMA**
 
-对于双周期时间序列可以建立模型$\mathrm{ARIMA}(p,d,q)\times(P_1,D_1,Q_1)_{S_1}\times(P_2,D_2,Q_2)_{S_2}$。进一步还需要对模型定阶，
+对于双周期时间序列可以建立模型![](https://latex.codecogs.com/svg.latex?\\mathrm{ARIMA}(p,d,q)\\times(P_1,D_1,Q_1)_{S_1}\\times(P_2,D_2,Q_2)_{S_2})。进一步还需要对模型定阶，
 ![](Latex/image/first_month.png)
 
 整体上看，路况数据没有递增或递减的时间趋势。到那时由于时间节点较长，数据较为复杂，直接通过时序图并不能直观的看出路况数据的周期性，所以使用自相关系数图来判断。
