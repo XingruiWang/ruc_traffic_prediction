@@ -2,7 +2,9 @@
 
 # Ruc traffic prediction ([paper](paper.pdf))
 
-### 数据集 ([link](https://ai.baidu.com/broad/introduction?dataset=traffic))
+Coursework of time series class, I applied MSARIMA model and Double seasonal Holt-Winters model to predict the traffic speed outside the gate of RUC campus.
+
+### :bar_chart:Dataset \ 数据集 ([link](https://ai.baidu.com/broad/introduction?dataset=traffic))
 
 **Q-Traffic Dataset** 是由百度大脑收集的大规模的交通预测数据集。数据集包括Traffic Speed数据集、Road Network数据集、Query数据集三个部分。
 
@@ -14,7 +16,7 @@
 
 <img src="Latex/image/road_map.png" alt="img" width="700" />
 
-### 模型结果
+### Result 模型结果
 
 ![DSHW](Latex/image/predict_ds.png)![MSARIMA](Latex/image/predict2.png)
 
@@ -27,7 +29,7 @@ MSARIMA和DSHW的RMSE，EC和MAP如下表所示。
 | MSARIMA | 3.511727              | 6.156587              | 0.958342              |
 | DSHW    | **2.507141**          | **3.862283**          | **0.974319**          |
 
-### 实验细节（详细实验过程在论文中）
+### :microscope: Experiments 实验细节（详细实验过程在论文中）
 
 **MSARIMA**
 
