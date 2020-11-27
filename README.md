@@ -16,7 +16,9 @@ Coursework of time series class, I applied MSARIMA model and Double seasonal Hol
 
 <img src="Latex/image/road_map.png" alt="img" width="700" />
 
-### Result 模型结果
+\  
+
+### :page_facing_up: Result 模型结果
 
 ![DSHW](Latex/image/predict_ds.png)![MSARIMA](Latex/image/predict2.png)
 
@@ -28,6 +30,8 @@ MSARIMA和DSHW的RMSE，EC和MAP如下表所示。
 |---------|-----------------------|-----------------------|-----------------------|
 | MSARIMA | 3.511727              | 6.156587              | 0.958342              |
 | DSHW    | **2.507141**          | **3.862283**          | **0.974319**          |
+
+\  
 
 ### :microscope: Experiments 实验细节（详细实验过程在论文中）
 
