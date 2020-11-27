@@ -2,7 +2,7 @@
 
 # Traffic speed prediction ([paper](paper.pdf))
 
-Coursework of time series class, I applied MSARIMA model and Double seasonal Holt-Winters model to predict the traffic speed outside the gate of RUC campus.
+:memo: Coursework of time series class in RUC. I applied MSARIMA model and Double seasonal Holt-Winters model to predict the traffic speed outside the gate of RUC campus.
 
 ### :bar_chart: Dataset / 数据集 ([link](https://ai.baidu.com/broad/introduction?dataset=traffic))
 
