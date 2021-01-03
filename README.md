@@ -20,7 +20,7 @@
 
 ### :page_facing_up: Result / 模型结果
 
-<table><tr>
+<table style="border: None;"><tr>
 <td><img src="Latex/image/predict_ds.png" border=0 alt="DSHW"></td>
 <td><img src="Latex/image/predict2.png" border=0 alt="MSARIMA"></td>
 </tr></table>
