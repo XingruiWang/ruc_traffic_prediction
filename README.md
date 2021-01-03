@@ -20,7 +20,11 @@
 
 ### :page_facing_up: Result / 模型结果
 
-![DSHW](Latex/image/predict_ds.png)![MSARIMA](Latex/image/predict2.png)
+<table><tr>
+<td><img src="Latex/image/predict_ds.png" border=0 alt="DSHW"></td>
+<td><img src="Latex/image/predict2.png" border=0 alt="MSARIMA"></td>
+</tr></table>
+
 
 ![MSARIMA](Latex/image/predict.png)
 
