@@ -3,7 +3,7 @@ library(forecast)
 library(smooth)
 library(tseries)
 library(FinTS)
-
+library(ggplot2)
 #======================= MSARIMA =================================
 ruc_traffic <- read.xlsx("data/ruc_traffic.xlsx",1)
 
@@ -18,7 +18,7 @@ x.diff.week = diff(x.hour, 24*7)
 x.diff.day = diff(x.diff.week, 24)
 #差分后的acf和pacf
 ggPacf(ts(x.diff.week, frequency = 24), lag.max=24*7*5, col="#444444")+scale_x_continuous(breaks=c(0:(5))*24*7, labels=c(0:5)*7)
-ggAacf(ts(x.diff.week, frequency = 24), lag.max=24*7*5, col="#444444")+scale_x_continuous(breaks=c(0:(5))*24*7, labels=c(0:5)*7)
+ggAcf(ts(x.diff.week, frequency = 24), lag.max=24*7*5, col="#444444")+scale_x_continuous(breaks=c(0:(5))*24*7, labels=c(0:5)*7)
 ggPacf(ts(x.diff.day, frequency = 24), lag.max=24*6, col="#444444")+scale_x_continuous(breaks=c(0:(6))*24, labels=c(0:6))
 ggAcf(ts(x.diff.day, frequency = 24), lag.max=24*6, col="#444444")+scale_x_continuous(breaks=c(0:(6))*24, labels=c(0:6))
 

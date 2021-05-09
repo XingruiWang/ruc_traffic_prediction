@@ -9,7 +9,7 @@ library(FinTS)
 x.hour.test = x.hour[(24*7*6+1):(24*7*8)] %>% ts(frequency = 24)
 
 #预测
-for_m2 = forecast(m2_2, h=24*7*2)
+for_m2 = forecast(m2, h=24*7*2)
 y_hat_2=for_m2$mean
 plot(for_m2)# m2预测较好
 
