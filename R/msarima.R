@@ -17,6 +17,7 @@ x.hour = ts(x.hour[-1464], frequency = 24)
 x.diff.week = diff(x.hour, 24*7)
 x.diff.day = diff(x.diff.week, 24)
 #差分后的acf和pacf
+Acf <- forecast::Acf
 ggPacf(ts(x.diff.week, frequency = 24), lag.max=24*7*5, col="#444444")+scale_x_continuous(breaks=c(0:(5))*24*7, labels=c(0:5)*7)
 ggAcf(ts(x.diff.week, frequency = 24), lag.max=24*7*5, col="#444444")+scale_x_continuous(breaks=c(0:(5))*24*7, labels=c(0:5)*7)
 ggPacf(ts(x.diff.day, frequency = 24), lag.max=24*6, col="#444444")+scale_x_continuous(breaks=c(0:(6))*24, labels=c(0:6))
